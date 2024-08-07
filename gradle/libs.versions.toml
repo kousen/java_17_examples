@@ -1,0 +1,33 @@
+[versions]
+assertj = "3.26.3"
+gson = "2.11.0"
+jackson = "2.17.2"
+junit = "5.11.0-RC1"
+mockito = "5.12.0"
+slf4j = "2.1.0-alpha1"
+wiremock = "3.9.1"
+
+[libraries]
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+jackson = { module = "com.fasterxml.jackson:jackson-bom", version.ref = "jackson" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-junit = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+slf4j-nop = { module = "org.slf4j:slf4j-nop", version.ref = "slf4j" }
+wiremock = { module = "org.wiremock:wiremock", version.ref = "wiremock" }
+
+[bundles]
+jackson = [
+    "jackson",
+    "jackson-databind",
+]
+mockito = [
+    "mockito-core",
+    "mockito-junit",
+]
+
+[plugins]
+version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.4"
+versions = "com.github.ben-manes.versions:0.51.0"
