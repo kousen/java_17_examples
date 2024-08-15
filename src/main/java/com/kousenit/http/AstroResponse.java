@@ -13,7 +13,7 @@ import java.util.List;
 public record AstroResponse(String message, int number, List<Assignment> people) {
     public record Assignment(String name, String craft) { }
 
-    // compact constructor
+    // compact constructor --> validation and tranformation of input data
     public AstroResponse {
         if (!message.equalsIgnoreCase("success")) {
             throw new IllegalArgumentException("Houston, we have a problem");

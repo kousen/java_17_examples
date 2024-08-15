@@ -59,12 +59,13 @@ public class VarTypeTest {
 
     @Test
     void loopOverComplicatedMap() {
-        Map<? extends String, List<? extends Integer>> map = Map.ofEntries(
-        // var map = Map.ofEntries(    // actually get a Map<String, List<Integer>>
+        //Map<? extends String, List<? extends Number>> map = Map.ofEntries(
+        var map = Map.ofEntries(    // actually get a Map<String, List<Integer>>
                 Map.entry("a", List.of(1, 2, 3)),
                 Map.entry("b", List.of(1, 2, 3)),
                 Map.entry("c", List.of(1, 2, 3)),
-                Map.entry("d", List.of(1, 2, 3)));
+                Map.entry("d", List.of(1, 2, 3.0)));
+        System.out.println(map.getClass().getName());
 
         // LVTI useful in for loops and try-with-resource blocks
         for (var entry : map.entrySet()) {
@@ -97,7 +98,7 @@ public class VarTypeTest {
     void nullProblem() {
         var z = (String) null;
         var x = (Void) null;
-        // var y = null;
+        //var y = null;
         System.out.printf("%s, %s%n", x, z);
     }
 
