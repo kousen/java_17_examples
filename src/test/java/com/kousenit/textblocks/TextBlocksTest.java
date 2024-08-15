@@ -20,7 +20,7 @@ public class TextBlocksTest {
     }
 
     @Test
-    void colorsFromJEP_eachLineHasFiveCharactersExactly() {
+    void colorsFromJEP_eachLineHasSixCharactersExactly() {
         String colors = """
                 red  \s
                 green\s
